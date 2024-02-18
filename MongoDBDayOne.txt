@@ -1,0 +1,67 @@
+#MongoDB
+
+#17thFeb24
+
+It is a nosql document based database
+
+mongod is a server application, which needs to running for mongodb running
+
+mongod requires data->db folder structure to run mongod
+
+only when a collection is created in a DB, then only your databse will be visible
+
+latest collections or table will be shown first in order
+
+MongoDB will automatically create a primary key ID, if while inserting the values are not provided
+
+MongoDB Compass GUI
+https://downloads.mongodb.com/compass/mongodb-compass-1.42.1-win32-x64.zip
+
+COMMANDS DAY ONE
+
+;  
+-> semi colon important
+
+show dbs; 
+-> shows all the databases present 
+
+use merndb; 
+-> it creates a new DB and switch to it
+
+db.createCollection('Students'); 
+-> create a new collection (table), once created then only your database will be visible in the db.
+
+db; 
+-> will show current database
+
+show collections; 
+-> will show all the collections(table) in the current database
+
+db.Students.insert({uname:'Aman',city:'Pune'}) 
+->without providing id myself it will create a primary key automatically
+
+db.Students.insert({_id:101,uname:'Aman',city:'Pune'}) 
+-> when _id provided , it will skip auto primary id createCollection
+
+db.Students.find(); 
+-> will fetch all the record from the DB collection(table)
+
+db.Students.find({uname:'Aman'}); 
+-> it will find the record with uname = Aman
+
+db.Students.findOne({uname:'Aman'});
+-> find records from top of the table
+
+db.Students.insertMany([{_id:103,uname:'Aditya',city:'Kolkata'},{_id:104,uname:'Bhaskar',city:'Kolkata'}]); 
+-> this will insert multiple records into the collection (table)
+
+
+db.createCollection("cappedTable",{capped:true,size:5242990,max:5});
+-> A new table or collection which is capped to either 5 mb or 5 records or documents
+-> whichever is achieved first, then it will overlap the records from the bottom
+
+
+#Q
+Sharding
+CAP Theorem
+Restrictions on collections (Table) explore
