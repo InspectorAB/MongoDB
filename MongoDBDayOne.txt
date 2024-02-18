@@ -65,3 +65,15 @@ db.createCollection("cappedTable",{capped:true,size:5242990,max:5});
 Sharding
 CAP Theorem
 Restrictions on collections (Table) explore
+
+
+
+
+
+
+
+
+
+
+
+
