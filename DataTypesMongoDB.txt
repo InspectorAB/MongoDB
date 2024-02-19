@@ -1,0 +1,117 @@
+#String------------------------------
+
+most Used
+BSON string are out of UTF-8.
+string must be a vaid UTF-8.
+
+Example:
+
+db.Students.insertMany([{},{}]);
+
+inserting string here.
+
+#Integer-----------------------------
+
+two forms 32 and 62 bit 
+
+
+#Double------------------------------
+
+store the floating-point values.
+
+
+#Boolean-----------------------------
+
+store either true or false.
+
+
+#Null--------------------------------
+
+store null values
+
+
+#Array------------------------------
+
+set of values.
+([]) <- used to create arrays.
+
+
+#Object-----------------------------
+
+stores embedded documents.
+contain a document inside other another document.
+
+document is a record, so record inside a record.
+
+
+#ObjectId----------------------------
+
+automatically creates a unique object id for document/record
+_id 
+hexadecimal format and length is 12 bytes
+
+4 bytes timestamp
+5 bytes random
+3 bytes counter
+
+
+#Undefined-----------------------------
+
+stores undefined values
+
+
+#Binary data---------------------------
+
+used to store binary data (0,1)
+
+
+#Date-----------------------------------
+
+stores date.
+64-bit Integer
+value negative then date is before 1970
+
+Date() -> returns current date in string format
+new Date() -> return a date object. ISODate() wrapper.
+mew ISODate() -> same as above
+
+var date1 = Date();
+var date2 = new Date();
+var date3 = new ISODate();
+
+
+# Min and Max key---------------------------
+
+Min compares the value of lowest BSON element
+Max compares the value against the highest BSON element.
+
+
+#Symbol-------------------------------------
+
+similar to string data type
+
+
+#Regular Expression #JavaScript---------------------------
+
+store regular Expression
+
+var expression = new RegExp("%asda");
+
+
+#timestamp ------------------------------------------------
+
+used to store a timestamp
+64-bit
+always unique
+
+var timestamp = new Timestamp();
+timestamp
+
+
+#Decimal ------------------------------
+
+128 - bit decimal based floating value
+
+var decimal = NumberDecimal("1231223.421");
+
+
