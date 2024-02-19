@@ -1,0 +1,69 @@
+# Home
+
+Collection
+
+A single database is allowed to store multiple collections.
+
+Doesn't contain $, empty string, null character and doesnt begin with system.
+
+MongoDB -> data records are stored as BSON documents.
+
+BSON -> binary representration of JSON documents. Maximum size is 16 MB.
+Ensures that the single document does not use too much amount of RAM or
+bandwidth(during transmission). 
+
+BSON contains more data types as compared to JSON.
+
+_id field name is reserved to use as a primary key, value of this field must
+be unique, immutable, and can be of any type other than an array.
+cannot contain null characters.
+
+Important
+
+When you create a collection MongoDB automatically creates a unique index on the _id field.
+
+The _id field is the first field of every document
+
+The value of the _id field can be of any BSON type except arrays.
+
+The default value of the _id field is ObjectId.
+
+
+----- Advance Commands ---------
+
+How to find a record using a variable?
+
+var mycursor = db.Students.find({_id:101}).pretty();
+mycursor
+
+How to use next?
+
+var mycursor = db.Students.find({_id:101}).pretty();
+var nextCursor = mycursor.next();
+printjson(nextCursor);
+
+What is pretty()?
+
+Used to format output of documents in a more readable way.
+We can use pretty() with commands such as find(), findOne(), aggregate(),etc.
+
+What is count()?
+
+returns total number of documents present in the given collection
+
+db.Students.find().count();
+db.Students.count();
+
+What is limit(number)?
+
+return top most limited records from a collection.
+db.Students.find().limit(2);
+
+What is sort()?
+
+returns sorted documents in a ascending or descending order based on column selected.
+-1 <- descending
+1 <- ascending
+
+db.Students.find().sort({uname:-1});
+
